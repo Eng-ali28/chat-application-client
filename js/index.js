@@ -178,7 +178,7 @@ logout.onclick = async function (e) {
       {},
       { withCredentials: true }
     );
-    window.location.href = `${secondURL}/`;
+    window.location.href = `${secondURL}`;
   } catch (error) {
     console.log(error);
   }
