@@ -15,6 +15,7 @@ if (localStorage.getItem("user")) {
   myEmail.innerText = sPhone;
 }
 const baseURL = "https://chat-idea.herokuapp.com";
+axios.defaults.withCredentials = true;
 // ======global function=====
 if (userId) {
   signup.style.display = "none";

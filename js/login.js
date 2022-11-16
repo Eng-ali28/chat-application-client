@@ -1,6 +1,7 @@
 // import axios from "axios";
 const baseURL = "https://chat-idea.herokuapp.com";
 const secondURL = "https://eng-ali28.github.io/chat-application-client";
+axios.defaults.withCredentials = true;
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = { email: email.value, password: password.value };
