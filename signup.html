@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.css" />
+    <title>signup</title>
+  </head>
+  <body>
+    <div
+      class="w-full flex justify-center items-center flex-col h-auto md:h-screen bg-slate-50 px-3 py-2"
+    >
+      <h1 class="text-6xl px-4 py-2 text-violet-600">Sign up</h1>
+      <div
+        class="text-violet-600 text-6xl p-4 rounded-full border-2 border-violet-600 my-2"
+      >
+        <i class="fa-solid fa-people-robbery fa-fw"></i>
+      </div>
+      <div class="w-full flex flex-col md:flex-row items-center justify-center">
+        <ul
+          id="errorBoxSign"
+          class="hidden text-red-600 p-2 h-32 md:h-auto overflow-y-scroll md:overflow-auto order-2 border border-red-600 bg-red-300"
+        ></ul>
+
+        <form
+          id="form"
+          method="post"
+          class="px-2 md:px-4 py-2 w-full md:w-4/6 flex flex-col order-1 justify-center items-center columns-2"
+        >
+          <div class="w-4/6 flex items-baseline justify-between">
+            <input
+              class="outline-none text-lg font-medium placeholder:text-lg w-5/12 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 border-violet-600 rounded-lg"
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="First name"
+            />
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Last name"
+              class="outline-none text-lg font-medium placeholder:text-lg w-5/12 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 border-violet-600 rounded-lg"
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            class="outline-none text-lg font-medium placeholder:text-lg w-4/6 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 border-violet-600 rounded-lg"
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="phone"
+            class="outline-none text-lg font-medium placeholder:text-lg w-4/6 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 border-violet-600 rounded-lg"
+            required
+            pattern="^(09){1}([0-9]){8}$"
+            title="phone example : 09xxxxxxxx"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            class="outline-none text-lg font-medium placeholder:text-lg w-4/6 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 border-violet-600 rounded-lg"
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Confirm password"
+            class="outline-none text-lg placeholder:text-lg w-4/6 placeholder-violet-400 px-4 py-3 mb-3 text-violet-600 border-2 font-medium border-violet-600 rounded-lg"
+          />
+          <input
+            type="submit"
+            class="outline-none cursor-pointer border-2 border-violet-600 text-lg text-violet-600 hover:text-white hover:bg-violet-500 font-medium transition p-4 rounded-lg"
+            value="Signup"
+          />
+        </form>
+      </div>
+      <p class="text-gray-400 text-lg">
+        If you have account
+        <a
+          href="./login.html"
+          class="text-lg text-violet-600 font-medium hover:text-violet-700"
+          >Login</a
+        >
+      </p>
+    </div>
+    <script type="module" src="js/signup.js"></script>
+  </body>
+</html>

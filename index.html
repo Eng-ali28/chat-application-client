@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="container flex items-center justify-around p-3">
+      <div class="logo p-4 border-2 rounded-md border-violet-600">
+        <i
+          class="fa-solid fa-people-robbery fa-fw text-3xl text-violet-600"
+        ></i>
+      </div>
+      <div class="flex items-center">
+        <a
+          href="login.html"
+          class="px-4 py-3 bg-violet-500 transition hover:bg-violet-600 text-white mr-2 text-xl rounded-md"
+          id="login"
+          >Login</a
+        >
+        <a
+          href="signup.html"
+          class="px-4 py-3 bg-violet-500 transition hover:bg-violet-600 text-white ml-2 text-xl rounded-md"
+          id="signup"
+          >Signup</a
+        >
+      </div>
+    </header>
+    <div
+      class="w-full bg-slate-50 h-screen-mix flex flex-col lg:flex-row justify-center"
+    >
+      <div class="basis-2/5 self-center px-20">
+        <div class="flex flex-col items-start w-full">
+          <h1
+            class="text-4xl text-center bg-violet-500 text-white p-4 rounded-xl font-medium mb-5"
+          >
+            Enjoy Now
+          </h1>
+          <p class="text-xl text-gray-400 font-md mb-5">
+            create new account to start your special chat
+          </p>
+          <a
+            href="signup.html"
+            class="px-4 py-3 bg-violet-500 transition hover:bg-violet-600 text-white ml-2 text-xl rounded-md"
+            id="signup"
+            >Signup</a
+          >
+        </div>
+      </div>
+
+      <div class="basis-2/5 hidden lg:block self-center">
+        <img
+          src="./imgs/chat-logo.png"
+          class="max-w-full lg:w-2/3 self-center rounded-lg"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>

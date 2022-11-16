@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;700&family=Roboto:wght@300;400;700&family=Tajawal:wght@300;400;700&display=swap");
+
+:root {
+  --main-color: #6145fc;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Familjen Grotesk", sans-serif;
+}
+body {
+  background-color: #eee;
+  height: 100vh;
+}
+.noty {
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(240, 0, 0, 0.6);
+  padding: 10px 20px;
+  border: 1px solid tomato;
+  transition: all 0.4s ease;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 97px;
+  padding: 15px 20px;
+  background-color: #fff;
+  position: relative;
+}
+header .logo {
+  padding: 15px;
+  border: 1px solid var(--main-color);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  z-index: 1;
+}
+header .logo i {
+  color: var(--main-color);
+  font-size: 35px;
+}
+header .notification {
+  position: relative;
+}
+header .notification .notBtn {
+  font-size: 28px;
+  color: var(--main-color);
+  display: none;
+  margin-right: 15px;
+  cursor: pointer;
+  text-align: end;
+  position: relative;
+}
+header .notification .notBtn.active {
+  color: tomato;
+  boxshadow: 0px 0px 5px red;
+}
+header .notification .notData {
+  padding: 10px;
+  background-color: white;
+  display: none;
+  list-style: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+  max-width: 250px;
+  max-height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 40px;
+}
+header .notification .notData::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-width: 10px;
+  border-style: solid;
+  z-index: 10;
+  border-color: transparent transparent #ccc transparent;
+}
+header .notification .notData li {
+  color: var(--main-color);
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 5px 0px;
+  background-color: #eee;
+}
+header .register {
+  z-index: 1;
+}
+header .register .btn {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+header .register .btn-sign {
+  margin-left: 12px;
+}
+#logout {
+  display: none;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-areas: "one two two two two two";
+}
+.container {
+  height: calc(100vh - 97px);
+  grid-area: two;
+  padding-top: 20px;
+}
+@media (max-width: 991px) {
+}
+.chatInfo {
+  grid-area: two;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 97px);
+  transition: all 0.4s ease;
+  box-shadow: 0px 4px 5px gray;
+  background-color: #fff;
+  padding: 15px;
+  background-color: #fff;
+  padding: 15px;
+  position: fixed;
+  transform: translateX(-95%);
+  left: 0px;
+}
+.chatInfo .arrow {
+  position: absolute;
+  top: 50%;
+  right: -23px;
+  font-size: 20px;
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+@media (max-width: 991px) {
+  .chatInfo {
+    width: 80%;
+  }
+  .chatInfo .addChat {
+    flex-direction: column;
+  }
+  .chatInfo .addChat input {
+    margin-bottom: 8px;
+  }
+}
+.chatInfo .myInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #eee;
+}
+.chatInfo .myInfo h2 {
+  text-transform: capitalize;
+
+  color: var(--main-color);
+}
+.chatInfo .myInfo h4 {
+  color: #777;
+}
+.chatInfo .chats {
+  margin: 10px 0px;
+  padding: 20px;
+  border-radius: 6px;
+  overflow-y: auto;
+  background-color: #eee;
+}
+.chatInfo .addChat {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatInfo .addChat ::placeholder {
+  color: var(--main-color);
+  font-size: 17px;
+  text-transform: capitalize;
+}
+.chatInfo .addChat .addInput {
+  flex-basis: 65%;
+  max-width: 100%;
+  background-color: #eee;
+  outline: none;
+  padding: 10px;
+  font-size: 17px;
+  color: var(--main-color);
+  border-radius: 8px;
+  border: 1px solid var(--main-color);
+}
+.chatInfo .addChat .addInput:focus {
+  box-shadow: 0px 0px 5px var(--main-color);
+}
+.chatInfo .addChat .addBtn {
+  flex-basis: 30%;
+  background-color: #eee;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-size: 17px;
+  color: var(--main-color);
+  cursor: pointer;
+  border: 1px solid var(--main-color);
+}
+.chatInfo .chats .listChat .nameFriend {
+  list-style: none;
+  padding: 10px;
+  text-transform: capitalize;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 15px 0px;
+  color: #777;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+.chatInfo .chats .listChat .nameFriend::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  top: 16px;
+  right: 16px;
+}
+.chatInfo .chats .listChat span {
+  display: none;
+}
+.chatInfo .chats .listChat .nameFriend.offline::after {
+  background-color: tomato;
+}
+.chatInfo .chats .listChat .nameFriend.active::after {
+  background-color: green;
+}
+.container .msgInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .container .msgInfo {
+    flex-direction: column;
+  }
+}
+.container .message-box {
+  height: 400px;
+  width: 400px;
+  max-width: 100%;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow-y: auto;
+}
+/* width */
+.container .message-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.container .message-box::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+.container .message-box::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Handle on hover */
+.container .message-box::-webkit-scrollbar-thumb:hover {
+  background: #5235f8;
+}
+.container .message-box .msg {
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 37%;
+  margin: 10px auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: all 0.4s ease;
+  transform: translateX(-65%);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transform: translateX(-65%);
+  -moz-transform: translateX(-65%);
+  -ms-transform: translateX(-65%);
+  -o-transform: translateX(-65%);
+}
+.container .message-box .msg.reciver {
+  background-color: var(--main-color);
+}
+.container .message-box .msg.sender .main-msg {
+  color: rgb(22, 22, 22);
+}
+.container .message-box .msg.sender {
+  background-color: gainsboro;
+  transform: translateX(70%);
+  -webkit-transform: translateX(70%);
+  -moz-transform: translateX(70%);
+  -ms-transform: translateX(70%);
+  -o-transform: translateX(70%);
+}
+.container .message-box .msg:first-child {
+  margin: 0px auto 10px auto;
+}
+.container .message-box .msg .main-msg {
+  color: #fff;
+  font-size: 16px;
+}
+.container .message-box .msg .msg-name,
+.container .message-box .msg .msg-date {
+  font-size: 12px;
+  color: rgb(167, 167, 167);
+}
+.container #form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 100%;
+  padding: 20px 20px 0px 20px;
+}
+.container #form .element {
+  width: 400px;
+  max-width: 100%;
+  padding: 0px 10px 10px 10px;
+  margin: auto;
+}
+.container #form span input {
+  padding: 10px 20px;
+  border: 2px solid var(--main-color);
+  background: #fff;
+  color: var(--main-color);
+  border-radius: 12px;
+  width: 70%;
+  font-size: 18px;
+  outline: none;
+  margin-left: 7px;
+}
+.container #form span input:focus {
+  box-shadow: 0px 0px 5px var(--main-color);
+}
+.container #form span ::placeholder {
+  color: #cac8daa8;
+  font-size: 18px;
+}
+.container #form span button {
+  padding: 10px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 7px;
+}
+.container #form span button i {
+  color: var(--main-color);
+}
