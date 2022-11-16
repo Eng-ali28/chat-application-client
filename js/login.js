@@ -6,6 +6,10 @@ form.addEventListener("submit", async (e) => {
   const formData = { email: email.value, password: password.value };
   const response = await axios.post(`${baseURL}/api/v1/auth/login`, formData, {
     withCredentials: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
   });
   if (response.data.errors) {
     errorBox.innerHTML = "";

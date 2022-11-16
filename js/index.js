@@ -48,7 +48,13 @@ async function getMychats(phone) {
   try {
     const response = await axios.get(
       `${baseURL}/api/v1/inbox/?myPhone=${phone}`,
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     const chats = response.data.inboxes.filter((ele) => ele.user.length > 1);
     chats.forEach((friend) => {
@@ -90,7 +96,13 @@ socketMsg.on("connectUser", async (userId) => {
   const user = await axios.patch(
     `${baseURL}/api/v1/user/${userId}/online`,
     {},
-    { withCredentials: true }
+    {
+      withCredentials: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+    }
   );
   socketMsg.emit("changeStatus", userId);
 });
@@ -101,7 +113,13 @@ addBtn.addEventListener("click", async (e) => {
     const response = await axios.post(
       `${baseURL}/api/v1/inbox/${addInput.value}`,
       {},
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     socketMsg.emit(
       "add-chat",
@@ -122,8 +140,20 @@ sendMsg.addEventListener("click", async (e) => {
     if (!roomVal) return new Error("can't join to this room.");
     const response = await axios.post(
       `${baseURL}/api/v1/messages/${roomVal}`,
-      { content: message.value },
-      { withCredentials: true }
+      {
+        content: message.value,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      },
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     const msg = response.data.message;
     const friendId = msg.inbox.user.find((ele) => ele.user.phone !== sPhone);
@@ -144,6 +174,10 @@ async function displayMsg(roomVal) {
     msgBox.innerHTML = "";
     const response = await axios.get(`${baseURL}/api/v1/messages/${roomVal}`, {
       withCredentials: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
     });
     const messageInfo = response.data.messages;
     messageInfo.forEach((ele) => {
@@ -169,12 +203,24 @@ logout.onclick = async function (e) {
     await axios.patch(
       `${baseURL}/api/v1/user/${userId}/offline`,
       {},
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     await axios.post(
       `${baseURL}/api/v1/auth/logout`,
       {},
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     window.location.href = `${secondURL}/`;
   } catch (error) {

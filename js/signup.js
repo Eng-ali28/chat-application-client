@@ -17,7 +17,13 @@ form.addEventListener("submit", async function (e) {
     const response = await axios.post(
       `${baseURL}/api/v1/auth/signup`,
       formData,
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
     if (response.data.errors) {
       errorBoxSign.innerHTML = "";
