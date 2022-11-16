@@ -51,7 +51,7 @@ async function getMychats(phone) {
       {
         withCredentials: true,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
@@ -99,7 +99,7 @@ socketMsg.on("connectUser", async (userId) => {
     {
       withCredentials: true,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
     }
@@ -116,7 +116,7 @@ addBtn.addEventListener("click", async (e) => {
       {
         withCredentials: true,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
@@ -143,7 +143,7 @@ sendMsg.addEventListener("click", async (e) => {
       {
         content: message.value,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       },
@@ -175,7 +175,7 @@ async function displayMsg(roomVal) {
     const response = await axios.get(`${baseURL}/api/v1/messages/${roomVal}`, {
       withCredentials: true,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
     });
@@ -206,7 +206,7 @@ logout.onclick = async function (e) {
       {
         withCredentials: true,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
@@ -217,7 +217,7 @@ logout.onclick = async function (e) {
       {
         withCredentials: true,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }

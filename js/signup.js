@@ -20,7 +20,7 @@ form.addEventListener("submit", async function (e) {
       {
         withCredentials: true,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
