@@ -173,12 +173,12 @@ logout.onclick = async function (e) {
       {},
       { withCredentials: true }
     );
+    window.location.href = `${secondURL}`;
     await axios.post(
       `${baseURL}/api/v1/auth/logout`,
       {},
       { withCredentials: true }
     );
-    window.location.href = `${secondURL}`;
   } catch (error) {
     console.log(error);
   }
