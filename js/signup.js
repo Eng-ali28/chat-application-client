@@ -19,10 +19,6 @@ form.addEventListener("submit", async function (e) {
       formData,
       {
         withCredentials: true,
-        headers: {
-          // "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
       }
     );
     if (response.data.errors) {
