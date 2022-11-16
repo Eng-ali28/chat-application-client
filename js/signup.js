@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-import axios from "axios";
+// import axios from "axios";
 const baseURL = "https://chat-idea.herokuapp.com";
 const secondURL = "https://eng-ali28.github.io/chat-application-client";
 form.addEventListener("submit", async function (e) {
