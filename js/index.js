@@ -176,7 +176,7 @@ logout.onclick = async function (e) {
       {},
       { withCredentials: true }
     );
-    window.location.href = "http://localhost:8080/";
+    window.location.href = `${secondURL}/`;
   } catch (error) {
     console.log(error);
   }

@@ -1,6 +1,7 @@
 const form = document.querySelector("form");
 import axios from "axios";
 const baseURL = "https://chat-idea.herokuapp.com";
+const secondURL = "https://eng-ali28.github.io/chat-application-client";
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
   try {
@@ -39,7 +40,7 @@ form.addEventListener("submit", async function (e) {
           phone: response.data.user.phone,
         })
       );
-      window.location.href = "http://localhost:8080/chat.html";
+      window.location.href = `${secondURL}/chat.html`;
     }
   } catch (error) {
     console.log(error);
