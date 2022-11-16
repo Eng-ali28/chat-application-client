@@ -163,6 +163,7 @@ socketMsg.on("showMsg", (ele) => {
 socketMsg.on("get-chat", (friend) => {
   getMychats(friend);
 });
+const secondURL = "https://eng-ali28.github.io/chat-application-client";
 logout.onclick = async function (e) {
   try {
     e.preventDefault();
