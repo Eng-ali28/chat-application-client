@@ -167,18 +167,19 @@ const secondURL = "https://eng-ali28.github.io/chat-application-client";
 logout.onclick = async function (e) {
   try {
     e.preventDefault();
-    localStorage.removeItem("user");
+    window.location.href = `${secondURL}`;
+
     await axios.patch(
       `${baseURL}/api/v1/user/${userId}/offline`,
       {},
       { withCredentials: true }
     );
-    window.location.href = `${secondURL}`;
     await axios.post(
       `${baseURL}/api/v1/auth/logout`,
       {},
       { withCredentials: true }
     );
+    localStorage.removeItem("user");
   } catch (error) {
     console.log(error);
   }
