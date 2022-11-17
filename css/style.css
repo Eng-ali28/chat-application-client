@@ -70,7 +70,8 @@ header .notification .notData {
   border-radius: 4px;
   min-width: 200px;
   max-width: 250px;
-  max-height: 100vh;
+  max-height: 50vh;
+  overflow-y: auto;
   z-index: 10;
   position: absolute;
   top: 40px;

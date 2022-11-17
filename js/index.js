@@ -47,6 +47,7 @@ arrow.addEventListener("click", (e) => {
 // ======get my chats========
 async function getMychats(phone) {
   try {
+    listChat.innerHTML = "";
     const response = await axios.get(
       `${baseURL}/api/v1/inbox/?myPhone=${phone}`,
       { withCredentials: true }
@@ -72,16 +73,6 @@ async function getMychats(phone) {
     console.log(error);
   }
 }
-
-setTimeout(() => {
-  const chatId = document.querySelectorAll(".chatIds");
-  const arrChat = [...chatId];
-  for (let ele of arrChat) {
-    ele.onclick = (e) => {
-      navigator.clipboard.writeText(ele.innerText);
-    };
-  }
-}, 300);
 
 // ======socket section======
 const socketMsg = io(`${baseURL}/chat`);
